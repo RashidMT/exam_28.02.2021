@@ -1,0 +1,495 @@
+@use '_lib';
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Public Sans', sans-serif;
+}
+
+.header {
+	width: 100vw;
+	background-color: white;
+}
+
+.container-header {
+	@include lib.makeContainerBox (1440px, 80px, 18px 165px);
+	margin-left: auto;
+	margin-right: auto;
+	nav {
+		display: flex;
+		justify-content: space-between;
+		height: 100%;
+		align-items: center;
+		.logo {
+			width: 139px;
+			height: 20px;
+		}
+		.nav-list {
+			@extend %mp-cleaner;
+			display: flex;
+			justify-content: space-between;
+			width: 320px;
+			height: 20px;
+			.nav-list-item {
+				@extend %li-style;
+				border-top: none;
+				border-left: none;
+				border-right: none;
+				border-bottom: 2px solid transparent;
+				a {
+					@extend %a-style;
+				}
+			}
+		}
+		.request {
+			@include lib.makeBox (163px, 44px, 22px);
+			background-image: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+			@extend %a-style;
+			color: white;
+			text-align: center;
+			padding: 12px 33px;
+			font-size: 14px;
+		}	
+	}
+}
+
+.container-main {
+	position: relative;
+	background-color: #FAFAFA;
+	background-image: url('../img/hero-phones-desktop.png'), 
+					  url('../img/hero-bg-desktop.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	width: 700px;
+	height: 700px;
+}
+
+.container-main {
+		@include lib.makeContainerBox (1440px, 736px, 0px);
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		.top-section {
+			@include lib.makeBox(447px, 316px, 0);
+			position: absolute;
+			left:165px;
+			top: 170px;
+			h1 {
+				font-size: 56px;
+				@extend %mp-cleaner;
+				margin-bottom: 24px;
+			}
+			p {
+				@extend %mp-cleaner;
+				margin-bottom: 36px;
+			}
+			.request {
+				@extend %a-style;
+				@include lib.makeBox (163px, 44px, 22px);
+				background-image: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+				text-align: center;
+				padding: 12px 33px;
+				font-size: 14px;
+				color: white;
+			}
+		}
+}
+
+.container-middle-section {
+	@include lib.makeContainerBox (1440px, 676px, 94px 165px);
+	background-color: #F4F5F7;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	.choose-easybank {
+		@include lib.makeBox(600px, 136px, 0);
+		margin-bottom: 32px;
+		h2 {
+			font-family: Public Sans;
+			font-style: normal;
+			font-weight: 100;
+			font-size: 40px;
+			line-height: 64px;
+			color:#2D314D;
+		}
+		p {
+			font-family: Public Sans;
+			font-style: normal;
+			font-size: 18px;
+			color:#2D314D;
+		}
+	}
+	.services-list {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+		.service-list-item {
+			@extend %li-style;
+			@include lib.makeBox(255px, 278px, 5px);
+			padding: 10px;
+			.list-item-link{
+				@extend %a-style;
+				width: 255px;
+				height: 278px;
+				img {
+					margin-bottom: 50px;
+				}
+				h4 {
+					margin-bottom: 24px;
+				}
+			}
+		}
+	}
+}
+
+.container-bottom-section {
+	@include lib.makeContainerBox (1440px, 604px, 80px 165px);
+	margin-left: auto;
+	margin-right: auto;
+	.bottom-section-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 1110px;
+		height: 499px;
+		div {
+			font-family: Public Sans;
+			font-style: normal;
+			font-weight: 100;
+			font-size: 40px;
+			margin-bottom: 25px;
+		}
+		.bottom-section-list {
+			@extend %mp-cleaner;
+			display: flex;
+			width: 1110px;
+			height: 100%;
+			justify-content: space-between;
+			.bottom-section-item {
+				@extend %li-style;
+				@include lib.makeBox(255px, 420px, 0);
+				transition: transform 0.1s linear;
+					.article-links {
+						@extend %a-style;
+						width: 255px;
+						height: 395px;
+						.author {
+							font-family: Public Sans;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 10px;
+							margin-bottom: 40px;
+						}
+						h5 {
+							font-family: Public Sans;
+							font-style: normal;
+							font-weight: 100;
+							font-size: 16px;
+							margin-bottom: 15px;
+						}
+						p {
+							font-family: Public Sans;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 13px;
+							color: #9597A5;
+						}
+				}
+			}
+		}
+	}
+}
+footer {
+	width: 100vw;
+}
+.container-footer {
+	@include lib.makeContainerBox (1440px, 191px, 48px 165px);
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #2D314D;
+	display: flex;
+	justify-content: space-between;
+	.logo-footer {
+		display: flex;
+		margin-right: 100px;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 95px;
+		width: 150px;
+		.social-media-list {
+			display: flex;
+			justify-content: space-between;
+			width: 150px;
+			.media-item {
+				@extend %li-style;
+			}
+		}
+	}
+	.contacts {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 250px;
+		height: 95px;
+		.contacts-list1 {
+		}
+		.contacts-item {
+			@extend %li-style;
+			margin-bottom: 11px;
+			a {
+				color: white;
+				@extend %a-style; 
+			}
+		}
+	}
+	.req-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.request {
+			transform: translateX(45%);
+			@extend %a-style;
+			@include lib.makeBox (163px, 44px, 22px);
+				background-image: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
+				text-align: center;
+				padding: 12px 33px;
+				font-size: 14px;
+				color: white;
+		}
+		.text {
+			color: white;
+		}
+	}
+}
+
+.request:hover {
+	opacity: 0.7;
+}
+
+.contacts-item a:hover {
+	color: green;
+}
+
+.nav-list-item a:hover {
+	border-bottom: 5px solid #33D35E;
+}
+
+.service-list-item:hover {
+	box-shadow: 0 0 20px 5px rgba(0,0,0,0.2);
+}
+
+.bottom-section-item:hover {
+	transform: translateY(-10px);
+}
+
+@media only screen and (max-width: 460px) {
+	.container-header {
+		width: 375px;
+		height: 64px;
+		padding: 10px 25px;
+		.logo {
+			width: 139px;
+			height: 20px;
+		}
+		.nav-list-item{
+			// position: absolute;
+			display: inline;
+		}
+		nav a {
+			display: none;
+		}
+	}
+	.container-main {
+		position: relative;
+		background-position: center;
+		background-size: 400px;
+		left: 40px;
+		width: 375px;
+		height: 500px;
+		padding: 0;
+		margin: 0;
+		.top-section {
+			position: relative;
+			left: 25px;
+			top: 525px;
+			padding: 0 15px;
+			text-align: center;
+			width: 375px;
+			h1 {
+				font-size: 25px;
+				margin: 0;
+			}
+			p {
+				margin-bottom: 24px;
+				margin-top: 15px;
+			}
+			.request {
+				@include lib.makeBox (163px, 44px, 22px);
+				text-align: center;
+				margin-top: 15px;
+				font-size: 12px;
+			}
+		}
+	}
+	.container-middle-section {
+		@include lib.makeContainerBox (375px, 1380px, 64px 24px);
+		position: relative;
+		top: 250px;
+		left: 30px;
+		.choose-easybank {
+			@include lib.makeBox(365px, 136px, 0);
+			margin-bottom: 25px;
+			h2 {
+				font-size: 18px;
+			}
+			p {
+				font-size: 14px;
+			}
+		}
+		.services-list {
+			display: flex;
+			flex-direction: column;
+			.service-list-item {
+				@include lib.makeBox(330px, 280px, 5px);
+				padding: 10px;
+				.list-item-link{
+					width: 365px;
+					height: 280px;
+
+					img {
+						margin-bottom: 50px;
+					}
+					h4 {
+						margin-bottom: 24px;
+					}
+				}
+			}
+		}
+
+	}
+	.container-bottom-section {
+		@include lib.makeContainerBox (450px, 1600px, 0);
+		.bottom-section-wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			position: relative;
+			top: 265px;
+			left: 35px;
+			width: 375px;
+			height: 1600px;
+			div {
+				text-align: center;
+				font-size: 32px;
+				margin-bottom: 15px;
+			}
+			.bottom-section-list {
+				display: flex;
+				flex-direction: column;
+				width: 375px;
+				height: 1600px;
+				justify-content: center;
+				align-items: center;
+				.bottom-section-item {
+					@include lib.makeBox(255px, 420px, 0);
+					transition: transform 0.1s linear;
+					.article-links {
+						width: 255px;
+						height: 395px;
+						.author {
+							font-family: Public Sans;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 10px;
+							margin-bottom: 40px;
+						}
+						h5 {
+							font-family: Public Sans;
+							font-style: normal;
+							font-weight: 100;
+							font-size: 16px;
+							margin-bottom: 15px;
+						}
+						p {
+							font-family: Public Sans;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 13px;
+							color: #9597A5;
+						}
+					}
+				}
+			}
+		}
+	}
+	.container-footer {
+	@include lib.makeContainerBox (375px, 500px, 30px 20px);
+	position: relative;
+	top: 350px;
+	left: 30px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	.logo-footer {
+		display: flex;
+		margin-right: 100px;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 95px;
+		width: 150px;
+		.social-media-list {
+			display: flex;
+			justify-content: space-between;
+			width: 150px;
+			.media-item {
+			}
+		}
+	}
+	.contacts {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 250px;
+		height: 95px;
+		.contacts-list1 {
+		}
+		.contacts-item {
+			margin-bottom: 11px;
+			a {
+				color: white;
+			}
+		}
+	}
+	.req-box {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 375px;
+		height: 100px;
+
+		.request {
+			transform: translateX(0);
+			@include lib.makeBox (163px, 44px, 22px);
+				// text-align: center;
+				// padding: 12px 33px;
+				font-size: 12px;
+		}
+		.text {
+			color: white;
+		}
+	}
+	}
+}

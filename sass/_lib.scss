@@ -1,0 +1,42 @@
+%mp-cleaner {
+	margin: 0;
+	padding: 0;
+}
+
+%li-style {
+	list-style-type: none;
+	// font-weight: bold;
+}
+
+%a-style {
+	text-decoration: none;
+	color: rgba(0,0,0,0.8);
+	text-transform: capitalize;
+}
+
+%capitalize {
+	text-transform: capitalize;
+}
+
+%input-style {
+	height: 30px;
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.3);
+	outline: rgba(0,0,0,0.3);
+}
+
+%bcolor {
+	background-color: #5454D4;
+}
+
+@mixin makeContainerBox ($wsize, $hsize, $padding) {
+	width: $wsize;
+	height: $hsize;
+	padding: $padding;
+}
+
+@mixin makeBox($wsize, $hsize, $bradius) {
+	width: $wsize;
+	height: $hsize;
+	border-radius: $bradius;
+}
